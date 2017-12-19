@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="css/css.css">
 
     <link rel="icon" href="img/cal.png">
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	    $('[data-toggle="tooltip"]').tooltip({
+	        placement : 'right'
+	    });
+	});
+	</script>
 </head>
 <body>
 
 
 	<div class="jumbotron jumbotron-fluid text-info">
 		<div class="container">
-			<h1 class="display-5">Pace Calculator</h1>
+			<img src="img/cal.png" class="img-fluid imagencalc" alt="Pace Calculator" width="90" height="90">
+			<h1 class="display-6">Pace Calculator</h1>
 			<p class="lead">Improve yourself.</p>
 		</div>
 	</div>
@@ -74,11 +84,11 @@
 				
 					<div class="col-4">
 						<div class="form-group">
-							<input type="text" class="form-control" id="distance1TIME" placeholder="Distance">
+							<input type="text" class="form-control" id="distance1TIME" placeholder="Distance" data-toggle="tooltip" title="On KM or MILES.">
 						</div>
 					</div>
 					<div class="col-2">
-						<select class="custom-select" id="unitsDistanceTIME">
+						<select class="custom-select" id="unitsDistanceTIME" data-toggle="tooltip" title="Choose the units of the distance.">
 							<option value="KM" >KM</option>
 							<option value="MILES">MILES</option>
 						</select>
@@ -94,13 +104,13 @@
 				</div>
 				<div class="col-6">
 					<div class="form-group">
-						<input type="text" class="form-control" id="pace1" placeholder="Pace &nbsp;|&nbsp; min/distance">
+						<input type="text" class="form-control" id="pace1" placeholder="Pace" data-toggle="tooltip" title="On min/distance.">
 					</div>
 				</div>
 			</div>
 			<div class="d-flex justify-content-end">
 				<div class="col-2 boton" id="btnTime">
-					<button type="button" class="btn btn-info" id="btn-time">Calculate time</button> 
+					<button type="button" class="btn btn-info" id="btn-time" data-toggle="tooltip" title="Press to calculate the time.">Calculate time</button> 
 				</div>
 			</div><hr>
 
@@ -114,12 +124,14 @@
 				</div>
 				<div class="col-4">
 					<div class="form-group">
-						<input type="text" class="form-control" id="cut" placeholder="Distance with a cut (YARDS)">
+						<input type="text" class="form-control" id="cut" placeholder="Distance with a cut" data-toggle="tooltip" title="On KM or YARDS.">
 					</div>
 				</div>
 				<div class="col-2">
 					<div class="col-2 boton" id="btnTime">
-						<button type="button" class="btn btn-info" id="btn-timeCut">Calculate with cut table</button> 
+						<button type="button" class="btn btn-info" id="btn-timeCut" data-toggle="tooltip" title="Press to make a table with a cut distance, it is required all fields.">
+							Calculate with cut table
+						</button> 
 					</div>
 				</div>
 			</div>
@@ -223,17 +235,17 @@
 				</div>
 				<div class="col-2">
 					<div class="form-group">
-						<input type="text" class="form-control" id="time1Pace" placeholder="Hours">
+						<input type="text" class="form-control" id="time1Pace" placeholder="Hours" data-toggle="tooltip" title="On hours.">
 					</div>
 				</div>
 				<div class="col-2">
 					<div class="form-group">
-						<input type="text" class="form-control" id="time2Pace" placeholder="Minutes">
+						<input type="text" class="form-control" id="time2Pace" placeholder="Minutes" data-toggle="tooltip" title="On minutes.">
 					</div>
 				</div>
 				<div class="col-2">
 					<div class="form-group">
-						<input type="text" class="form-control" id="time3Pace" placeholder="Seconds">
+						<input type="text" class="form-control" id="time3Pace" placeholder="Seconds" data-toggle="tooltip" title="On seconds.">
 					</div>
 				</div>
 			</div>
@@ -253,11 +265,11 @@
 				
 					<div class="col-4">
 						<div class="form-group">
-							<input type="text" class="form-control" id="distance1" placeholder="Distance">
+							<input type="text" class="form-control" id="distance1" placeholder="Distance" data-toggle="tooltip" title="On KM or MILES.">
 						</div>
 					</div>
 					<div class="col-2">
-						<select class="custom-select" id="unitsPace">
+						<select class="custom-select" id="unitsPace" data-toggle="tooltip" title="Choose the units of the distance.">
 							<option value="KM" >KM</option>
 							<option value="MILES">MILES</option>
 						</select>
@@ -286,7 +298,7 @@
 			</fieldset>
 			<div class="d-flex justify-content-end">
 				<div class="col-2 boton" id="btn-pace">
-					<button type="button" class="btn btn-info">Calculate pace</button> 
+					<button type="button" class="btn btn-info" data-toggle="tooltip" title="Press to calculate the pace.">Calculate pace</button> 
 				</div>
 			</div>
 			<br>
@@ -297,7 +309,7 @@
 		</div>
 		<div class="col-4">
 			<div class="card text-dark bg-warning mb-3 d-inline-block" style="width: 100%;">
-				<div class="card-header"><h5 class="card-title">Advice<h5></div>
+				<div class="card-header"><h5 class="card-title"><strong>Warning</strong><h5></div>
 				<div class="card-body">
 					<p class="card-text">The fields with * are obligatories.</p>
 				</div>
@@ -306,16 +318,14 @@
 	</div>
 	
 	</div>
-	<script>
-		$(function () {
-			$('#myTab a:last').tab('show')
-		})
-	</script>
-
 
 </div>
 
-
+<script>
+	$(function () {
+			$('#myTab a:first').tab('show')
+		})
+</script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
